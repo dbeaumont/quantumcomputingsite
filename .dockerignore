@@ -1,0 +1,42 @@
+# Dependencies
+node_modules
+npm-debug.log*
+
+# Build output
+dist
+build
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Documentation
+README.md
+*.md
+
+# Tests
+coverage
+*.test.*
+*.spec.*
+
+# Environment
+.env
+.env.*
+
+# Claude
+.claude
