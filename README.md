@@ -1,6 +1,6 @@
-# QuantumSite
+# Quantum Computing - Site d'apprentissage
 
-Une plateforme d'apprentissage interactive pour découvrir l'informatique quantique.
+Site interactif de présentation de l'informatique quantique avec cours, quiz QCM et suivi de progression.
 
 ![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?logo=typescript)
@@ -8,203 +8,121 @@ Une plateforme d'apprentissage interactive pour découvrir l'informatique quanti
 ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-## Aperçu
+## Fonctionnalités
 
-QuantumSite est un site web éducatif conçu pour rendre l'informatique quantique accessible à tous. Il propose des chapitres interactifs avec des illustrations animées, des quiz pour tester ses connaissances, et un suivi de progression personnalisé.
+- **6 chapitres** couvrant les fondamentaux de l'informatique quantique
+  - Introduction à l'informatique quantique
+  - Les qubits : unité de base
+  - Portes quantiques
+  - Algorithmes quantiques fondamentaux
+  - Correction d'erreurs quantiques
+  - Applications et futur
 
-### Fonctionnalités
-
-- **8 chapitres complets** couvrant les fondamentaux de l'informatique quantique
-- **Illustrations SVG animées** pour visualiser les concepts abstraits
 - **Quiz interactifs** avec explications détaillées
-- **Système d'authentification local** (connexion/inscription) avec stockage dans le navigateur
-- **Suivi de progression** (scores, badges, statistiques)
-- **Design moderne** avec thème sombre et effets quantiques
+- **Système d'authentification** (mode démo avec stockage local)
+- **Tableau de bord** de progression avec achievements
+- **Design moderne** avec animations et effets quantiques
 
-## Contenu pédagogique
+## Stack technique
 
-| Chapitre | Thème | Difficulté |
-|----------|-------|------------|
-| 1 | Introduction à l'informatique quantique | Débutant |
-| 2 | Physique quantique sous-jacente | Intermédiaire |
-| 3 | Logique classique vs quantique | Intermédiaire |
-| 4 | Technologies de qubits | Intermédiaire |
-| 5 | Algorithmes quantiques | Intermédiaire |
-| 6 | Applications de l'informatique quantique | Débutant |
-| 7 | Défis et obstacles | Intermédiaire |
-| 8 | Écosystème quantique | Débutant |
+- **Framework** : Next.js 14 (App Router)
+- **Language** : TypeScript
+- **Styling** : Tailwind CSS
+- **Animations** : Framer Motion
+- **State** : Zustand
+- **Icons** : Lucide React
 
-Les chapitres mentionnent les acteurs majeurs du domaine, dont **C12** et ses qubits à nanotubes de carbone.
-
-## Installation
-
-### Prérequis
+## Prérequis
 
 - Node.js 20+
 - npm ou yarn
-- Docker (optionnel)
+- Docker & Docker Compose (optionnel)
 
-### Développement local
+## Installation
+
+### Sans Docker
 
 ```bash
-# Cloner le repository
-git clone https://github.com/votre-username/quantumsite.git
-cd quantumsite
-
 # Installer les dépendances
 npm install
 
-# Lancer le serveur de développement
+# Lancer en développement
 npm run dev
+
+# Build production
+npm run build
+
+# Lancer en production
+npm start
 ```
 
-Le site sera accessible sur `http://localhost:5173`
-
-### Docker
+### Avec Docker
 
 ```bash
-# Production (port 80)
-docker compose up -d quantumsite
+# Développement (avec hot-reload)
+make dev
 
-# Développement avec hot-reload (port 5173)
-docker compose --profile dev up quantumsite-dev
+# Production
+make prod
 
 # Arrêter les conteneurs
-docker compose down
+make down
+
+# Voir les logs
+make logs
+
+# Nettoyer tout
+make clean
 ```
 
-## Scripts disponibles
+## Commandes Make disponibles
 
 | Commande | Description |
 |----------|-------------|
-| `npm run dev` | Lance le serveur de développement |
-| `npm run build` | Build de production |
-| `npm run preview` | Prévisualise le build de production |
-| `npm run lint` | Vérifie le code avec ESLint |
+| `make dev` | Lance le serveur de développement |
+| `make prod` | Lance le serveur de production |
+| `make down` | Arrête tous les conteneurs |
+| `make logs` | Affiche les logs |
+| `make shell` | Ouvre un shell dans le conteneur |
+| `make build` | Build l'image de production |
+| `make clean` | Supprime conteneurs, images et volumes |
 
 ## Structure du projet
 
 ```
-quantumsite/
-├── src/
-│   ├── components/
-│   │   ├── Layout.tsx              # Navigation et mise en page
-│   │   └── QuantumIllustration.tsx # Illustrations SVG animées
-│   ├── context/
-│   │   └── AuthContext.tsx         # Gestion de l'authentification
-│   ├── data/
-│   │   └── chapters.ts             # Contenu des chapitres et quiz
-│   ├── pages/
-│   │   ├── Home.tsx                # Page d'accueil
-│   │   ├── Login.tsx               # Connexion / Inscription
-│   │   ├── Chapters.tsx            # Liste des chapitres
-│   │   ├── ChapterDetail.tsx       # Contenu d'un chapitre
-│   │   └── Progress.tsx            # Suivi de progression
-│   ├── App.tsx                     # Configuration du routing
-│   ├── main.tsx                    # Point d'entrée
-│   └── index.css                   # Styles globaux
-├── public/
-│   └── quantum-icon.svg            # Favicon
-├── Dockerfile                      # Image de production
-├── Dockerfile.dev                  # Image de développement
-├── docker-compose.yml              # Orchestration Docker
-├── nginx.conf                      # Configuration Nginx
-└── package.json
+├── app/
+│   ├── components/       # Composants réutilisables
+│   │   ├── Navbar.tsx
+│   │   └── QuantumBackground.tsx
+│   ├── chapters/         # Pages des chapitres
+│   ├── login/            # Page de connexion
+│   ├── register/         # Page d'inscription
+│   ├── progress/         # Tableau de bord
+│   ├── quiz/             # Pages des quiz
+│   ├── globals.css       # Styles globaux
+│   ├── layout.tsx        # Layout principal
+│   └── page.tsx          # Page d'accueil
+├── lib/
+│   ├── data.ts           # Contenu (chapitres + quiz)
+│   ├── store.ts          # Stores Zustand
+│   └── types.ts          # Types TypeScript
+├── public/               # Assets statiques
+├── Dockerfile            # Image de production
+├── Dockerfile.dev        # Image de développement
+├── docker-compose.yml    # Orchestration Docker
+└── Makefile              # Commandes raccourcies
 ```
 
-## Technologies
+## Accès
 
-- **React 18** - Bibliothèque UI
-- **TypeScript** - Typage statique
-- **Vite** - Build tool
-- **Tailwind CSS** - Framework CSS utilitaire
-- **React Router** - Routing côté client
-- **Lucide React** - Icônes
-- **Docker** - Conteneurisation
-- **Nginx** - Serveur web de production
+Une fois lancé, le site est accessible sur : **http://localhost:3000**
 
-## Personnalisation
+## Mode démo
 
-### Ajouter un chapitre
-
-Éditez le fichier `src/data/chapters.ts` et ajoutez un nouvel objet au tableau `chapters` :
-
-```typescript
-{
-  id: 'nouveau-chapitre',
-  title: 'Titre du chapitre',
-  subtitle: 'Description courte',
-  icon: 'Atom', // Icône Lucide
-  color: '#6366f1',
-  duration: '15 min',
-  difficulty: 'Débutant',
-  sections: [
-    {
-      title: 'Section 1',
-      content: 'Contenu avec **markdown** basique...',
-      illustration: 'nom-illustration' // optionnel
-    }
-  ],
-  quiz: [
-    {
-      id: 'q1',
-      question: 'Question ?',
-      options: ['A', 'B', 'C', 'D'],
-      correctAnswer: 0,
-      explanation: 'Explication de la réponse.'
-    }
-  ]
-}
-```
-
-### Ajouter une illustration
-
-Ajoutez un nouveau cas dans `src/components/QuantumIllustration.tsx` :
-
-```typescript
-'nom-illustration': (
-  <svg viewBox="0 0 400 200" className={className}>
-    {/* Votre SVG */}
-  </svg>
-),
-```
-
-## Déploiement
-
-### Vercel / Netlify
-
-Le projet est prêt pour un déploiement sur Vercel ou Netlify. Connectez simplement votre repository.
-
-### Docker en production
-
-```bash
-# Build l'image
-docker build -t quantumsite .
-
-# Lance le conteneur
-docker run -d -p 80:80 quantumsite
-```
-
-### Variables d'environnement
-
-Aucune variable d'environnement n'est requise. Les données utilisateur sont stockées dans le localStorage du navigateur.
-
-## Contribuer
-
-Les contributions sont les bienvenues ! N'hésitez pas à :
-
-1. Fork le projet
-2. Créer une branche (`git checkout -b feature/amelioration`)
-3. Commit vos changements (`git commit -m 'Ajout d'une fonctionnalité'`)
-4. Push sur la branche (`git push origin feature/amelioration`)
-5. Ouvrir une Pull Request
+L'authentification fonctionne en mode démo :
+- Entrez n'importe quel email/mot de passe pour créer un compte
+- Les données sont stockées localement dans le navigateur
 
 ## Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
-## Remerciements
-
-- Les équipes de recherche en informatique quantique
-- [C12](https://www.c12qe.com/) pour leur approche innovante des qubits
-- La communauté open source React et Tailwind
+MIT

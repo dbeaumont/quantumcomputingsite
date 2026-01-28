@@ -1,32 +1,32 @@
 services:
-  # Production build
-  quantumsite:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: quantumsite-prod
-    ports:
-      - "80:80"
-    restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 10s
-
-  # Development with hot reload
-  quantumsite-dev:
+  # Development service
+  quantum-dev:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    container_name: quantumsite-dev
+    container_name: quantum-computing-dev
     ports:
-      - "5173:5173"
+      - "3000:3000"
     volumes:
       - .:/app
       - /app/node_modules
+      - /app/.next
     environment:
       - NODE_ENV=development
+      - WATCHPACK_POLLING=true
     profiles:
       - dev
+
+  # Production service
+  quantum-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: quantum-computing-prod
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    profiles:
+      - prod
