@@ -8,17 +8,17 @@ Une plateforme d'apprentissage interactive pour découvrir l'informatique quanti
 ![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?logo=docker)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-## Apercu
+## Aperçu
 
 QuantumSite est un site web éducatif conçu pour rendre l'informatique quantique accessible à tous. Il propose des chapitres interactifs avec des illustrations animées, des quiz pour tester ses connaissances, et un suivi de progression personnalisé.
 
 ### Fonctionnalités
 
-- **7 chapitres complets** couvrant les fondamentaux de l'informatique quantique
+- **8 chapitres complets** couvrant les fondamentaux de l'informatique quantique
 - **Illustrations SVG animées** pour visualiser les concepts abstraits
 - **Quiz interactifs** avec explications détaillées
-- **Système d'authentification** avec stockage local
-- **Suivi de progression** avec badges et statistiques
+- **Système d'authentification local** (connexion/inscription) avec stockage dans le navigateur
+- **Suivi de progression** (scores, badges, statistiques)
 - **Design moderne** avec thème sombre et effets quantiques
 
 ## Contenu pédagogique
@@ -27,11 +27,12 @@ QuantumSite est un site web éducatif conçu pour rendre l'informatique quantiqu
 |----------|-------|------------|
 | 1 | Introduction à l'informatique quantique | Débutant |
 | 2 | Physique quantique sous-jacente | Intermédiaire |
-| 3 | Technologies de qubits | Intermédiaire |
-| 4 | Algorithmes quantiques | Intermédiaire |
-| 5 | Applications | Débutant |
-| 6 | Défis et obstacles | Intermédiaire |
-| 7 | Écosystème quantique | Débutant |
+| 3 | Logique classique vs quantique | Intermédiaire |
+| 4 | Technologies de qubits | Intermédiaire |
+| 5 | Algorithmes quantiques | Intermédiaire |
+| 6 | Applications de l'informatique quantique | Débutant |
+| 7 | Défis et obstacles | Intermédiaire |
+| 8 | Écosystème quantique | Débutant |
 
 Les chapitres mentionnent les acteurs majeurs du domaine, dont **C12** et ses qubits à nanotubes de carbone.
 
