@@ -92,116 +92,118 @@ body {
   }
 }
 
-/* Glow effects */
-.glow {
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3),
-              0 0 40px rgba(0, 212, 255, 0.2),
-              0 0 60px rgba(0, 212, 255, 0.1);
-}
+@layer components {
+  /* Glow effects */
+  .glow {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3),
+                0 0 40px rgba(0, 212, 255, 0.2),
+                0 0 60px rgba(0, 212, 255, 0.1);
+  }
 
-.glow-purple {
-  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3),
-              0 0 40px rgba(168, 85, 247, 0.2),
-              0 0 60px rgba(168, 85, 247, 0.1);
-}
+  .glow-purple {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3),
+                0 0 40px rgba(168, 85, 247, 0.2),
+                0 0 60px rgba(168, 85, 247, 0.1);
+  }
 
-.glow-text {
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5),
-               0 0 20px rgba(0, 212, 255, 0.3),
-               0 0 30px rgba(0, 212, 255, 0.2);
-}
+  .glow-text {
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5),
+                 0 0 20px rgba(0, 212, 255, 0.3),
+                 0 0 30px rgba(0, 212, 255, 0.2);
+  }
 
-/* Card styles */
-.quantum-card {
-  background: linear-gradient(
-    135deg,
-    rgba(14, 165, 233, 0.1) 0%,
-    rgba(168, 85, 247, 0.1) 100%
-  );
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  transition: all 0.3s ease;
-}
+  /* Card styles */
+  .quantum-card {
+    background: linear-gradient(
+      135deg,
+      rgba(14, 165, 233, 0.1) 0%,
+      rgba(168, 85, 247, 0.1) 100%
+    );
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+  }
 
-.quantum-card:hover {
-  border-color: rgba(0, 212, 255, 0.3);
-  box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
-  transform: translateY(-4px);
-}
+  .quantum-card:hover {
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
+    transform: translateY(-4px);
+  }
 
-/* Button styles */
-.quantum-btn {
-  background: linear-gradient(135deg, #0ea5e9 0%, #a855f7 100%);
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
+  /* Button styles */
+  .quantum-btn {
+    background: linear-gradient(135deg, #0ea5e9 0%, #a855f7 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
 
-.quantum-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s ease;
-}
+  .quantum-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.5s ease;
+  }
 
-.quantum-btn:hover::before {
-  left: 100%;
-}
+  .quantum-btn:hover::before {
+    left: 100%;
+  }
 
-.quantum-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
-}
+  .quantum-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
+  }
 
-/* Input styles */
-.quantum-input {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 12px 16px;
-  color: white;
-  width: 100%;
-  transition: all 0.3s ease;
-}
+  /* Input styles */
+  .quantum-input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: white;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
 
-.quantum-input:focus {
-  outline: none;
-  border-color: rgba(0, 212, 255, 0.5);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
-}
+  .quantum-input:focus {
+    outline: none;
+    border-color: rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+  }
 
-.quantum-input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
+  .quantum-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
 
-/* Progress bar */
-.progress-bar {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-}
+  /* Progress bar */
+  .progress-bar {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
 
-.progress-fill {
-  background: linear-gradient(90deg, #0ea5e9, #a855f7);
-  height: 100%;
-  border-radius: 10px;
-  transition: width 0.5s ease;
+  .progress-fill {
+    background: linear-gradient(90deg, #0ea5e9, #a855f7);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+  }
 }
 
 /* Markdown content styles */
